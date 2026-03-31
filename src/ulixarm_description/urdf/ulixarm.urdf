@@ -7,13 +7,13 @@
         <visual>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/visual/base.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/visual/base.stl"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/collision/base.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/collision/base.stl"/>
             </geometry>
         </collision>
     </link>
@@ -22,13 +22,13 @@
         <visual>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/visual/joint1.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/visual/joint1.stl"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/collision/joint1.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/collision/joint1.stl"/>
             </geometry>
         </collision>
     </link>
@@ -37,13 +37,13 @@
         <visual>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/visual/link1.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/visual/link1.stl"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/collision/link1.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/collision/link1.stl"/>
             </geometry>
         </collision>
     </link>
@@ -52,13 +52,13 @@
         <visual>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/visual/link2.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/visual/link2.stl"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/collision/link2.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/collision/link2.stl"/>
             </geometry>
         </collision>
     </link>
@@ -67,13 +67,13 @@
         <visual>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/visual/joint4.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/visual/joint4.stl"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/collision/joint4.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/collision/joint4.stl"/>
             </geometry>
         </collision>
     </link>
@@ -82,13 +82,13 @@
         <visual>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/visual/joint5.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/visual/joint5.stl"/>
             </geometry>
         </visual>
         <collision>
             <origin xyz="0. 0. 0."/>
             <geometry>
-                <mesh filename="../meshes/collision/joint5.stl"/>
+                <mesh filename="package://ulixarm_description/meshes/collision/joint5.stl"/>
             </geometry>
         </collision>
     </link>
@@ -110,7 +110,7 @@
         <parent link="base_link"/>
         <child link="link1"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-3.15" upper="3.15" velocity="0.10" effort="0.5"/> 
+        <limit lower="-1.57079632679" upper="1.57079632679" velocity="0.10" effort="0.5"/> 
     </joint>
 
     <joint name="joint2" type="revolute">
@@ -118,7 +118,7 @@
         <parent link="link1"/>
         <child link="link2"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-3.15" upper="3.15" velocity="0.10" effort="0.5"/> 
+        <limit lower="-1.57079632679" upper="1.57079632679" velocity="0.10" effort="0.5"/> 
     </joint>
 
     <joint name="joint3" type="revolute">
@@ -126,7 +126,7 @@
         <parent link="link2"/>
         <child link="link3"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-3.15" upper="3.15" velocity="0.10" effort="0.5"/> 
+        <limit lower="-1.57079632679" upper="2.7925268" velocity="0.10" effort="0.5"/> 
     </joint>
 
     <joint name="joint4" type="revolute">
@@ -134,7 +134,7 @@
         <parent link="link3"/>
         <child link="link4"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-3.15" upper="3.15" velocity="0.10" effort="0.5"/> 
+        <limit lower="-3.14159265359" upper="1.57079632679" velocity="0.10" effort="0.5"/> 
     </joint>
 
     <joint name="joint5" type="revolute">
@@ -142,7 +142,7 @@
         <parent link="link4"/>
         <child link="link5"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-3.15" upper="3.15" velocity="0.10" effort="0.5"/> 
+        <limit lower="-1.57079632679" upper="1.57079632679" velocity="0.10" effort="0.5"/> 
     </joint>
 
     <joint name="joint6" type="revolute">
@@ -150,7 +150,7 @@
         <parent link="link5"/>
         <child link="tcp"/>
         <axis xyz="0 0 1"/>
-        <limit lower="-3.15" upper="3.15" velocity="0.10" effort="0.5"/> 
+        <limit lower="-1.57079632679" upper="1.57079632679" velocity="0.10" effort="0.5"/> 
     </joint>
 
 </robot>
