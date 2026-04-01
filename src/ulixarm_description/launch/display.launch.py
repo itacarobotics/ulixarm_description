@@ -13,10 +13,11 @@ def generate_launch_description():
     params = {'robot_description': robot_desc}
     
     robot_state_publisher_node =launch_ros.actions.Node(
-    package='robot_state_publisher',
-	executable='robot_state_publisher',
-    output='screen',
-    parameters=[params])
+        package='robot_state_publisher',
+        executable='robot_state_publisher',
+        output='screen',
+        parameters=[params]
+    )
     
     
     joint_state_publisher_node = launch_ros.actions.Node(
