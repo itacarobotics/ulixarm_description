@@ -3,7 +3,7 @@
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
 
     <!-- Import ulixarm urdf file -->
-    <xacro:include filename="$(find ulixarm_description)/urdf/ulixarm.urdf" />
+    <xacro:include filename="$(find ulixarm_description)/urdf/ulixarm.urdf.xacro" />
 
     <!-- Import control_xacro -->
     <xacro:include filename="ulixarm.ros2_control.xacro" />
