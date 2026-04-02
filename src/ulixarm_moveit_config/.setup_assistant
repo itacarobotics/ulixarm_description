@@ -1,0 +1,27 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: ulixarm_description
+    relative_path: urdf/ulixarm.urdf
+  srdf:
+    relative_path: config/ulixarm.srdf
+  package_settings:
+    author_name: Federico Osti
+    author_email: ostifederico02@gmail.com
+    generated_timestamp: 1775056989
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+      - velocity
+    state:
+      - position
+      - velocity
