@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ulixarm_with_ulixhand">
+
+  <!-- Include both xacro files -->
+  <xacro:include filename="$(find ulixarm_description)/urdf/ulixarm.urdf.xacro"/>
+  <xacro:include filename="$(find ulixarm_description)/urdf/ulixhand.urdf.xacro"/>
+
+  <!-- Instantiate the arm (defines base_link → tool0) -->
+  <xacro:arm_macro prefix="arm_"/>
+
+  <!-- Instantiate the gripper, parented to the arm's tool flange -->
+  <xacro:gripper_macro prefix="hand_"/>
+
+  <!-- Attach gripper base to the arm's end-effector link -->
+  <joint name="ulixarm_to_ulixhand" type="fixed">
+    <parent link="arm_tool0"/>
+    <child  link="hand_base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+</robot>
