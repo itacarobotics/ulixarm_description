@@ -3,12 +3,12 @@
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
 
     <!-- Import ulixarm urdf file -->
-    <xacro:include filename="$(find ulixarm_description)/urdf/ulixarm.urdf.xacro" />
+    <xacro:include filename="$(find ulixarm_description)/urdf/robot.urdf" />
 
     <!-- Import control_xacro -->
     <xacro:include filename="ulixarm.ros2_control.xacro" />
 
-    <!-- <xacro:ulixarm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/> -->
-    <xacro:ulixarm_ros2_control name="ulixarm" initial_positions_file="$(arg initial_positions_file)"/>
+
+    <xacro:ulixarm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
 
 </robot>

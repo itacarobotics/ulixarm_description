@@ -1,16 +1,17 @@
 moveit_setup_assistant_config:
   urdf:
     package: ulixarm_description
-    relative_path: urdf/ulixarm.urdf.xacro
+    relative_path: urdf/robot.urdf
   srdf:
     relative_path: config/ulixarm.srdf
   package_settings:
     author_name: Federico Osti
-    author_email: ostifederico02@gmail.com
-    generated_timestamp: 1775117192
+    author_email: ostifederico@gmail.com
+    generated_timestamp: 1775755787
   control_xacro:
     command:
       - position
+      - velocity
     state:
       - position
       - velocity
@@ -20,6 +21,7 @@ moveit_setup_assistant_config:
   control_xacro:
     command:
       - position
+      - velocity
     state:
       - position
       - velocity

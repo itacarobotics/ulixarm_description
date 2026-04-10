@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ulixarm_with_ulixhand">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ulixarm">
 
-  <!-- Include both xacro files -->
-  <xacro:include filename="$(find ulixarm_description)/urdf/ulixarm.urdf.xacro"/>
-  <xacro:include filename="$(find ulixarm_description)/urdf/ulixhand.urdf.xacro"/>
+  <xacro:property name="MANIPULATOR_PREFIX" value="manipulator_"/>
+  <xacro:property name="GRIPPER_PREFIX" value="gripper_"/>
 
-  <!-- Instantiate the arm (defines base_link → tool0) -->
-  <xacro:arm_macro prefix="arm_"/>
+  <!-- Include xacro files -->
+  <xacro:include filename="$(find ulixarm_description)/urdf/manipulator.urdf.xacro"/>
+  <xacro:include filename="$(find ulixarm_description)/urdf/gripper.urdf.xacro"/>
 
-  <!-- Instantiate the gripper, parented to the arm's tool flange -->
-  <xacro:gripper_macro prefix="hand_"/>
+  <xacro:manipulator_macro prefix="${MANIPULATOR_PREFIX}"/>
+  <xacro:gripper_macro prefix="${GRIPPER_PREFIX}"/>
 
   <!-- Attach gripper base to the arm's end-effector link -->
-  <joint name="ulixarm_to_ulixhand" type="fixed">
-    <parent link="arm_tool0"/>
-    <child  link="hand_base_link"/>
+  <joint name="manipulator_to_gripper" type="fixed">
+    <parent link="${MANIPULATOR_PREFIX}tool0"/>
+    <child  link="${GRIPPER_PREFIX}base_link"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
 

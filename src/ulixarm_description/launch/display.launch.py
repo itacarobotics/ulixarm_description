@@ -5,7 +5,7 @@ import os
 
 def generate_launch_description():
     pkgPath = launch_ros.substitutions.FindPackageShare(package='ulixarm_description').find('ulixarm_description')
-    urdfModelPath= os.path.join(pkgPath, 'urdf/ulixarm.urdf.xacro')
+    urdfModelPath= os.path.join(pkgPath, 'urdf/robot.urdf')
     
     with open(urdfModelPath,'r') as infp:
     	robot_desc = infp.read()
