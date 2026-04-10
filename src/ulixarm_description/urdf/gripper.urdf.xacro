@@ -24,6 +24,10 @@
                     <mesh filename="package://ulixarm_description/meshes/collision/gripper_base.stl"/>
                 </geometry>
             </collision>
+            <inertial>
+                <mass value="1.0"/>
+                <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+            </inertial>
         </link>
 
         <link name="${prefix}finger_right">
@@ -68,7 +72,7 @@
         <!-- JOINTS -->
 
         <joint name="finger_right_joint" type="prismatic">
-            <origin xyz="0. 0. 0.1219" rpy="0. 0. 0."/>
+            <origin xyz="0. 0. 0.1349" rpy="0. 0. 0."/>
             <parent link="${prefix}base_link"/>
             <child link="${prefix}finger_right"/>
             <axis xyz="1 0 0"/>
@@ -76,7 +80,7 @@
         </joint>
 
         <joint name="finger_left_joint" type="prismatic">
-            <origin xyz="0. 0. 0.1219" rpy="0. 0. ${PI}"/>
+            <origin xyz="0. 0. 0.1349" rpy="0. 0. ${PI}"/>
             <parent link="${prefix}base_link"/>
             <child link="${prefix}finger_left"/>
             <axis xyz="-1 0 0"/>
