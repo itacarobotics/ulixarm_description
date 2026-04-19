@@ -10,10 +10,9 @@
                 <plugin>damiao_hardware_interface/RobotSystem</plugin>
                 
                 <param name="serial_port">/dev/ttyACM0</param>
-                <param name="serial_baud_rate">921600</param>
+                <param name="serial_baudrate">921600</param>
 
-                <param name="use_gravity_compensation">false</param> <!--true/false-->
-                <param name="use_free_floating">false</param> <!-- true/false -->
+                <param name="use_gravity_compensation">true</param> <!--true/false-->
 
             </hardware>
             <joint name="joint1">
@@ -27,8 +26,8 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="joint2">
-                <param name="Kp">400.0</param>
-                <param name="Kd">2.5</param>                
+                <param name="Kp">300.0</param>
+                <param name="Kd">2.0</param>                
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
                 <state_interface name="position">
@@ -47,8 +46,8 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="joint4">
-                <param name="Kp">200.0</param>
-                <param name="Kd">2.5</param>
+                <param name="Kp">100.0</param>
+                <param name="Kd">1.0</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
                 <state_interface name="position">
@@ -57,7 +56,7 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="joint5">
-                <param name="Kp">50.0</param>
+                <param name="Kp">100.0</param>
                 <param name="Kd">1.0</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
@@ -68,7 +67,7 @@
             </joint>
             <joint name="joint6">
                 <param name="Kp">50.0</param>
-                <param name="Kd">0.25</param>
+                <param name="Kd">0.5</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
                 <state_interface name="position">
