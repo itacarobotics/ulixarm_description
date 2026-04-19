@@ -23,7 +23,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/base.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/base_link.stl"/>
                 </geometry>
             </collision>
             <!-- <inertial>
@@ -43,7 +43,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/joint1.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/link1.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -63,7 +63,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/link1.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/link2.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -83,7 +83,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/link2.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/link3.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -104,7 +104,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/joint4.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/link4.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -125,7 +125,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/joint5.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/link5.stl"/>
                 </geometry>
             </collision>
             <inertial>

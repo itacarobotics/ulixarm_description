@@ -21,7 +21,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/gripper_base.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/gripper_base_link.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -42,7 +42,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/finger.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/finger_right.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -56,13 +56,13 @@
             <visual>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/visual/finger.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/visual/finger_right.dae"/>
                 </geometry>
             </visual>
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/finger.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/finger_right.stl"/>
                 </geometry>
             </collision>
             <inertial>
