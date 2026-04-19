@@ -15,7 +15,7 @@
             <visual>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/visual/gripper_base.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/visual/gripper_base_link.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -36,7 +36,7 @@
             <visual>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/visual/finger.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/visual/finger_right.dae"/>
                 </geometry>
             </visual>
             <collision>
