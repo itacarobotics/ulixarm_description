@@ -13,6 +13,7 @@
                 <param name="serial_baudrate">921600</param>
 
                 <param name="use_gravity_compensation">true</param> <!--true/false-->
+                <param name="use_free_floating">true</param> <!--true/false-->
 
             </hardware>
             <joint name="joint1">
