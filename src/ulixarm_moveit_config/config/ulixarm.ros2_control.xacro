@@ -13,11 +13,11 @@
                 <param name="serial_baudrate">921600</param>
 
                 <param name="use_gravity_compensation">true</param> <!--true/false-->
-                <param name="use_free_floating">true</param> <!--true/false-->
+                <param name="use_free_floating">false</param> <!--true/false-->
 
             </hardware>
             <joint name="joint1">
-                <param name="Kp">300.0</param>
+                <param name="Kp">20.0</param>
                 <param name="Kd">2.0</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
@@ -27,8 +27,8 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="joint2">
-                <param name="Kp">300.0</param>
-                <param name="Kd">2.0</param>                
+                <param name="Kp">120.0</param>
+                <param name="Kd">3.0</param>                
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
                 <state_interface name="position">
@@ -37,8 +37,8 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="joint3">
-                <param name="Kp">300.0</param>
-                <param name="Kd">2.0</param>
+                <param name="Kp">120.0</param>
+                <param name="Kd">3.0</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
                 <state_interface name="position">
@@ -47,7 +47,7 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="joint4">
-                <param name="Kp">100.0</param>
+                <param name="Kp">10.0</param>
                 <param name="Kd">1.0</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
@@ -57,7 +57,7 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="joint5">
-                <param name="Kp">100.0</param>
+                <param name="Kp">10.0</param>
                 <param name="Kd">1.0</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
@@ -68,7 +68,7 @@
             </joint>
             <joint name="joint6">
                 <param name="Kp">50.0</param>
-                <param name="Kd">0.5</param>
+                <param name="Kd">1.0</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>
                 <state_interface name="position">
@@ -77,7 +77,7 @@
                 <state_interface name="velocity"/>
             </joint>
             <joint name="finger_right_joint">
-                <param name="Kp">0.4</param>
+                <param name="Kp">0.5</param>
                 <param name="Kd">0.1</param>
                 <command_interface name="position"/>
                 <command_interface name="velocity"/>

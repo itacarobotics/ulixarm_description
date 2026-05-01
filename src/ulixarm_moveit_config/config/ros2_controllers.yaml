@@ -1,7 +1,7 @@
 # This config file is used by ros2_control
 controller_manager:
   ros__parameters:
-    update_rate: 50  # Hz
+    update_rate: 120  # Hz
 
     ulixarm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
@@ -9,6 +9,7 @@ controller_manager:
 
     ulixhand_controller:
       type: position_controllers/GripperActionController
+      # type: parallel_gripper_action_controller/GripperActionController
 
 
     joint_state_broadcaster:
@@ -34,7 +35,7 @@ ulixarm_controller:
 ulixhand_controller:
   ros__parameters:
     joint: finger_right_joint
-    allow_stalling: true
-    stall_velocity_threshold: 0.1
-    stall_timeout: 0.1
-    max_effort: 0.5
+    allow_stalling: false
+    # stall_velocity_threshold: 0.1
+    # stall_timeout: 0.1
+    # max_effort: 0.5
