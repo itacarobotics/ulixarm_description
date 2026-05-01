@@ -75,7 +75,7 @@
         <!-- JOINTS -->
 
         <joint name="finger_right_joint" type="prismatic">
-            <origin xyz="0. 0. 0.1349" rpy="0. 0. 0."/>
+            <origin xyz="0. 0. 0.1289" rpy="0. 0. 0."/>
             <parent link="${prefix}base_link"/>
             <child link="${prefix}finger_right"/>
             <axis xyz="1 0 0"/>
@@ -83,7 +83,7 @@
         </joint>
 
         <joint name="finger_left_joint" type="prismatic">
-            <origin xyz="0. 0. 0.1349" rpy="0. 0. ${PI}"/>
+            <origin xyz="0. 0. 0.1289" rpy="0. 0. ${PI}"/>
             <parent link="${prefix}base_link"/>
             <child link="${prefix}finger_left"/>
             <axis xyz="1 0 0"/>
