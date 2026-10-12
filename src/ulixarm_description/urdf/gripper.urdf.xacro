@@ -6,8 +6,6 @@
         <!-- CONSTANTS -->
 
         <xacro:property name="PI" value="3.14159265359"/>
-        <xacro:property name="velocity_limit_DMJ3507"   value="0.5"/>
-        <xacro:property name="effort_limit_DMJ3507"     value="0.1"/>
 
         <!-- LINKS -->
         
@@ -15,7 +13,7 @@
             <visual>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/visual/gripper_base_link.dae"/>
+                    <mesh filename="package://ulixarm_description/meshes/visual/gripper.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -25,9 +23,9 @@
                 </geometry>
             </collision>
             <inertial>
-                <origin xyz="0. 0. 0.052"/>
-                <mass value="0.470"/>
-                <inertia ixx="0.000337" ixy="0.0" ixz="0.0" iyy="0.000891" iyz="0.0" izz="0.000786"/>
+                <origin xyz="-0.012 0. 0.036"/>
+                <mass value="0.730"/>
+                <inertia ixx="0.000939" ixy="0.0" ixz="0.0" iyy="0.000987" iyz="0.0" izz="0.001086"/>
             </inertial>
         </link>
 
@@ -35,7 +33,7 @@
             <visual>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/visual/finger_right.dae"/>
+                    <mesh filename="package://ulixarm_description/meshes/visual/finger.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -55,7 +53,7 @@
             <visual>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/visual/finger_right.dae"/>
+                    <mesh filename="package://ulixarm_description/meshes/visual/finger.dae"/>
                 </geometry>
             </visual>
             <collision>
@@ -75,22 +73,22 @@
         <!-- JOINTS -->
 
         <joint name="finger_right_joint" type="prismatic">
-            <origin xyz="0. 0. 0.1289" rpy="0. 0. 0."/>
+            <origin xyz="0. 0. 0.0745" rpy="0. 0. ${PI/2}"/>
             <parent link="${prefix}base_link"/>
             <child link="${prefix}finger_right"/>
             <axis xyz="1 0 0"/>
-            <limit lower="0.0" upper="0.04" velocity="${velocity_limit_DMJ3507}" effort="${effort_limit_DMJ3507}"/> 
+            <limit lower="0.0" upper="0.045" velocity="0.0" effort="0.0"/> 
         </joint>
 
         <joint name="finger_left_joint" type="prismatic">
-            <origin xyz="0. 0. 0.1289" rpy="0. 0. ${PI}"/>
+            <origin xyz="0. 0. 0.0745" rpy="0. 0. ${-PI/2}"/>
             <parent link="${prefix}base_link"/>
             <child link="${prefix}finger_left"/>
             <axis xyz="1 0 0"/>
             <mimic joint="finger_right_joint" multiplier="1" offset="0"/>
-            <limit lower="0.0" upper="0.04" velocity="${velocity_limit_DMJ3507}" effort="${effort_limit_DMJ3507}"/> 
+            <limit lower="0.0" upper="0.045" velocity="0.0" effort="0.0"/> 
         </joint>
-  
+
   </xacro:macro>
 
 </robot>
