@@ -19,7 +19,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/gripper_base_link.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/gripper.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -39,7 +39,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/finger_right.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/finger.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -59,7 +59,7 @@
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/finger_right.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/finger.stl"/>
                 </geometry>
             </collision>
             <inertial>
@@ -77,7 +77,7 @@
             <parent link="${prefix}base_link"/>
             <child link="${prefix}finger_right"/>
             <axis xyz="1 0 0"/>
-            <limit lower="0.0" upper="0.045" velocity="0.0" effort="0.0"/> 
+            <limit lower="0.0" upper="0.045" velocity="0.5" effort="10.0"/> 
         </joint>
 
         <joint name="finger_left_joint" type="prismatic">
@@ -86,7 +86,7 @@
             <child link="${prefix}finger_left"/>
             <axis xyz="1 0 0"/>
             <mimic joint="finger_right_joint" multiplier="1" offset="0"/>
-            <limit lower="0.0" upper="0.045" velocity="0.0" effort="0.0"/> 
+            <limit lower="0.0" upper="0.045" velocity="0.5" effort="10.0"/> 
         </joint>
 
   </xacro:macro>

@@ -122,12 +122,6 @@
         <mesh filename="package://ulixarm_description/meshes/visual/link6.dae"/>
       </geometry>
     </visual>
-    <collision>
-      <origin xyz="0. 0. 0."/>
-      <geometry>
-        <mesh filename="package://ulixarm_description/meshes/collision/link5.stl"/>
-      </geometry>
-    </collision>
     <inertial>
       <origin xyz="0. 0. 0.007"/>
       <mass value="0.025"/>
@@ -201,7 +195,7 @@
     <collision>
       <origin xyz="0. 0. 0."/>
       <geometry>
-        <mesh filename="package://ulixarm_description/meshes/collision/gripper_base_link.stl"/>
+        <mesh filename="package://ulixarm_description/meshes/collision/gripper.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -220,7 +214,7 @@
     <collision>
       <origin xyz="0. 0. 0."/>
       <geometry>
-        <mesh filename="package://ulixarm_description/meshes/collision/finger_right.stl"/>
+        <mesh filename="package://ulixarm_description/meshes/collision/finger.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -239,7 +233,7 @@
     <collision>
       <origin xyz="0. 0. 0."/>
       <geometry>
-        <mesh filename="package://ulixarm_description/meshes/collision/finger_right.stl"/>
+        <mesh filename="package://ulixarm_description/meshes/collision/finger.stl"/>
       </geometry>
     </collision>
     <inertial>
@@ -254,7 +248,7 @@
     <parent link="gripper_base_link"/>
     <child link="gripper_finger_right"/>
     <axis xyz="1 0 0"/>
-    <limit effort="0.0" lower="0.0" upper="0.045" velocity="0.0"/>
+    <limit effort="10.0" lower="0.0" upper="0.045" velocity="0.5"/>
   </joint>
   <joint name="finger_left_joint" type="prismatic">
     <origin rpy="0. 0. -1.570796326795" xyz="0. 0. 0.0745"/>
@@ -262,7 +256,7 @@
     <child link="gripper_finger_left"/>
     <axis xyz="1 0 0"/>
     <mimic joint="finger_right_joint" multiplier="1" offset="0"/>
-    <limit effort="0.0" lower="0.0" upper="0.045" velocity="0.0"/>
+    <limit effort="10.0" lower="0.0" upper="0.045" velocity="0.5"/>
   </joint>
   <!-- Attach gripper base to the arm's end-effector link -->
   <joint name="manipulator_to_gripper" type="fixed">
