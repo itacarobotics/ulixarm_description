@@ -32,3 +32,6 @@ The main robot description is defined in `robot.urdf`. The remaining URDF files 
 
 ![Collision meshes](assets/collision.png)
 
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
