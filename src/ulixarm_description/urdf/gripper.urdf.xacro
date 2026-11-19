@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <xacro:macro name="gripper_macro" params="prefix">
+    <xacro:macro name="gripper_macro" params="prefix camera:=true">
         
         <!-- CONSTANTS -->
 
         <xacro:property name="PI" value="3.14159265359"/>
+        <xacro:property name="gripper_mesh" value="${'gripper_with_camera' if camera else 'gripper'}"/>
 
         <!-- LINKS -->
         
@@ -13,19 +14,26 @@
             <visual>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/visual/gripper.dae"/>
+                    <mesh filename="package://ulixarm_description/meshes/visual/${gripper_mesh}.dae"/>
                 </geometry>
             </visual>
             <collision>
                 <origin xyz="0. 0. 0."/>
                 <geometry>
-                    <mesh filename="package://ulixarm_description/meshes/collision/gripper.stl"/>
+                    <mesh filename="package://ulixarm_description/meshes/collision/${gripper_mesh}.stl"/>
                 </geometry>
             </collision>
             <inertial>
                 <origin xyz="-0.012 0. 0.036"/>
-                <mass value="0.73"/>
-                <inertia ixx="0.000939" ixy="0.0" ixz="0.0" iyy="0.000987" iyz="0.0" izz="0.001086"/>
+                <xacro:if value="${camera}">
+                    <mass value="0.71"/>
+                    <inertia ixx="0.000939" ixy="0.0" ixz="0.0" iyy="0.000987" iyz="0.0" izz="0.001086"/>
+                </xacro:if>
+                <!-- without the ~0.35 kg camera; shortcut: CoM kept and inertia scaled by mass ratio (0.38/0.73), recompute from CAD for accuracy -->
+                <xacro:unless value="${camera}">
+                    <mass value="0.65"/>
+                    <inertia ixx="0.000489" ixy="0.0" ixz="0.0" iyy="0.000514" iyz="0.0" izz="0.000565"/>
+                </xacro:unless>
             </inertial>
         </link>
 
@@ -44,7 +52,7 @@
             </collision>
             <inertial>
                 <origin xyz="0.010 0.002 -0.040"/>
-                <mass value="0.0"/>
+                <mass value="0.01"/>
                 <inertia ixx="0.000034" ixy="0.0" ixz="0.0" iyy="0.000048" iyz="0.0" izz="0.000026"/>
             </inertial>
         </link>
@@ -64,7 +72,7 @@
             </collision>
             <inertial>
                 <origin xyz="0.010 0.002 -0.040"/>
-                <mass value="0.0"/>
+                <mass value="0.01"/>
                 <inertia ixx="0.000034" ixy="0.0" ixz="0.0" iyy="0.000048" iyz="0.0" izz="0.000026"/>
             </inertial>
         </link>

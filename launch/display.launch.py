@@ -18,7 +18,7 @@ def generate_launch_description() -> LaunchDescription:
     )
     model_arg = DeclareLaunchArgument(
         name='model',
-        default_value=PathJoinSubstitution([pkg_share, 'urdf', 'robot.urdf']),
+        default_value=PathJoinSubstitution([pkg_share, 'urdf', 'arm_gripper_camera.urdf']),
         description='Absolute path to the robot URDF file'
     )
 
@@ -52,7 +52,7 @@ def generate_launch_description() -> LaunchDescription:
         executable='rviz2',
         name='rviz2',
         output='screen',
-        # arguments=['-d', LaunchConfiguration('rviz_config')]
+        arguments=['-d', PathJoinSubstitution([pkg_share, 'rviz', 'display.rviz'])]
     )
 
     return LaunchDescription([

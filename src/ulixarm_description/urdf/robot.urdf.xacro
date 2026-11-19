@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ulixarm">
 
+  <xacro:arg name="gripper" default="true"/>
+  <xacro:arg name="camera" default="true"/>
+
   <xacro:property name="MANIPULATOR_PREFIX" value="manipulator_"/>
   <xacro:property name="GRIPPER_PREFIX" value="gripper_"/>
 
@@ -9,13 +12,16 @@
   <xacro:include filename="$(find ulixarm_description)/urdf/gripper.urdf.xacro"/>
 
   <xacro:manipulator_macro prefix="${MANIPULATOR_PREFIX}"/>
-  <xacro:gripper_macro prefix="${GRIPPER_PREFIX}"/>
 
-  <!-- Attach gripper base to the arm's end-effector link -->
-  <joint name="manipulator_to_gripper" type="fixed">
-    <parent link="${MANIPULATOR_PREFIX}tool0"/>
-    <child  link="${GRIPPER_PREFIX}base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint>
+  <xacro:if value="$(arg gripper)">
+    <xacro:gripper_macro prefix="${GRIPPER_PREFIX}" camera="$(arg camera)"/>
+
+    <!-- Attach gripper base to the arm's end-effector link -->
+    <joint name="manipulator_to_gripper" type="fixed">
+      <parent link="${MANIPULATOR_PREFIX}tool0"/>
+      <child  link="${GRIPPER_PREFIX}base_link"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+  </xacro:if>
 
 </robot>
